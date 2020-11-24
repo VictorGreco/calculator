@@ -32,7 +32,7 @@
     <br />
     <a href="https://github.com/victorgreco/calculator">View Demo</a>
     ·
-    <a href="https://github.com/victorgreco/calculator/issues">Report Bug</a>
+    <a href="https://github.com/victorgreco/calculator/issues">calculatorrt Bug</a>
     ·
     <a href="https://github.com/victorgreco/calculator/issues">Request Feature</a>
   </p>
@@ -44,7 +44,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+  * [Web Calculator](#web-calculator)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -53,8 +53,6 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
 
 
 <!-- ABOUT THE PROJECT -->
@@ -83,7 +81,7 @@ Have a browser which supports **CSS3** and **JavaScript** like chrome. Most of m
 
 ### Installation
 
-1. Clone the repo
+1. Clone the calculator
 ```sh
 git clone https://github.com/victorgreco/calculator.git
 ```
@@ -183,16 +181,16 @@ Project Link: [https://github.com/victorgreco/calculator](https://github.com/vic
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/victorgreco/repo.svg?style=flat-square
-[contributors-url]: https://github.com/victorgreco/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/victorgreco/repo.svg?style=flat-square
-[forks-url]: https://github.com/victorgreco/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/victorgreco/repo.svg?style=flat-square
-[stars-url]: https://github.com/victorgreco/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/victorgreco/repo.svg?style=flat-square
-[issues-url]: https://github.com/victorgreco/repo/issues
-[license-shield]: https://img.shields.io/github/license/victorgreco/repo.svg?style=flat-square
-[license-url]: https://github.com/victorgreco/repo/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/victorgreco/calculator.svg?style=flat-square
+[contributors-url]: https://github.com/victorgreco/calculator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/victorgreco/calculator.svg?style=flat-square
+[forks-url]: https://github.com/victorgreco/calculator/network/members
+[stars-shield]: https://img.shields.io/github/stars/victorgreco/calculator.svg?style=flat-square
+[stars-url]: https://github.com/victorgreco/calculator/stargazers
+[issues-shield]: https://img.shields.io/github/issues/victorgreco/calculator.svg?style=flat-square
+[issues-url]: https://github.com/victorgreco/calculator/issues
+[license-shield]: https://img.shields.io/github/license/victorgreco/calculator.svg?style=flat-square
+[license-url]: https://github.com/victorgreco/calculator/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/victor-greco/
 [product-screenshot]: images/screenshot.png
