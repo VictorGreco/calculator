@@ -32,7 +32,7 @@
     <br />
     <a href="https://github.com/victorgreco/calculator">View Demo</a>
     ·
-    <a href="https://github.com/victorgreco/calculator/issues">calculatorrt Bug</a>
+    <a href="https://github.com/victorgreco/calculator/issues">report Bug</a>
     ·
     <a href="https://github.com/victorgreco/calculator/issues">Request Feature</a>
   </p>
@@ -81,7 +81,7 @@ Have a browser which supports **CSS3** and **JavaScript** like chrome. Most of m
 
 ### Installation
 
-1. Clone the calculator
+1. Clone the repo
 ```sh
 git clone https://github.com/victorgreco/calculator.git
 ```
