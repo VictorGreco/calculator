@@ -32,7 +32,7 @@
     <br />
     <a href="https://github.com/victorgreco/calculator">View Demo</a>
     ·
-    <a href="https://github.com/victorgreco/calculator/issues">report Bug</a>
+    <a href="https://github.com/victorgreco/calculator/issues">Report Bug</a>
     ·
     <a href="https://github.com/victorgreco/calculator/issues">Request Feature</a>
   </p>
