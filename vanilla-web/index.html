@@ -4,41 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../web/css/_custom.css">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../vanilla-web/css/_custom.css">
 </head>
 
 <body>
     <div class="calculator">
-        <label class="calculator-toggle-mode switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
+        <div class="nav-bar">
+            <label class="switch">
+                <input type="checkbox" data-action="dark-mode-toggle">
+                <span class="slider round"></span>
+            </label>
+            <button data-action="h">History</button>
+        </div>
+
         <div class="calculator-screen">0</div>
         <div class="calculator-body">
-            <button class="" data-action="clear">C</button>
-            <button class="" data-action="toggle-sign">+ / -</button>
-            <button class="" data-action="operator">%</button>
+            <button class="gray" data-action="clear">C</button>
+            <button class="gray" data-action="toggle-sign">+ / -</button>
+            <button class="gray" data-action="operator">%</button>
             <button class="" data-action="operator">/</button>
-            <button class="" data-action="7">7</button>
-            <button class="" data-action="8">8</button>
-            <button class="" data-action="9">9</button>
+            <button class="num" data-action="num">7</button>
+            <button class="num" data-action="num">8</button>
+            <button class="num" data-action="num">9</button>
             <button class="" data-action="operator">x</button>
-            <button class="" data-action="4">4</button>
-            <button class="" data-action="5">5</button>
-            <button class="" data-action="6">6</button>
+            <button class="num" data-action="num">4</button>
+            <button class="num" data-action="num">5</button>
+            <button class="num" data-action="num">6</button>
             <button class="" data-action="operator">-</button>
-            <button class="" data-action="1">1</button>
-            <button class="" data-action="2">2</button>
-            <button class="" data-action="3">3</button>
+            <button class="num" data-action="num">1</button>
+            <button class="num" data-action="num">2</button>
+            <button class="num" data-action="num" >3</button>
             <button class="" data-action="operator">+</button>
-            <button class="" data-action="0">0</button>
-            <button class="" data-action="decimal">.</button>
+            <button class="num zero" data-action="num">0</button>
+            <button class="num" data-action="decimal">.</button>
             <button class="" data-action="total">=</button>
         </div>
+        <div class="history"></div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="../vanilla-web/js/main.js"></script>
 </body>
 
 </html>

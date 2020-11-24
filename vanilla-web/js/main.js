@@ -2,43 +2,54 @@
 var NUM1;
 var NUM2;
 var OPERATOR;
+var HISTORY = [];
 
 // HELPER FUNCTIONS
-const getTextContent = node => node.textContent;
-const setTextContent = (node, value) => node.textContent = value;
-const appendChar = (left, right) => left.concat(right);
-const updateNumbers = value => !!OPERATOR ? NUM2 = parseFloat(value) : NUM1 = parseFloat(value);
-const calculate = () => {
-    switch (OPERATOR) {
-        case '%':
-            return NUM1 / 100 * NUM2;
-        case '/':
-            return NUM1 / NUM2;
-        case 'x':
-            return NUM1 * NUM2;
-        case '-':
-            return NUM1 - NUM2;
-        case '+':
-            return NUM1 + NUM2;
+const getTextContent = node => node.textContent,
+    setTextContent = (node, value) => node.textContent = value,
+    appendChar = (left, right) => left.concat(right),
+    calculate = () => {
+        switch (OPERATOR) {
+            case '%':
+                return NUM1 / 100 * NUM2;
+            case '/':
+                return NUM1 / NUM2;
+            case 'x':
+                return NUM1 * NUM2;
+            case '-':
+                return NUM1 - NUM2;
+            case '+':
+                return NUM1 + NUM2;
 
-        default:
-            throw 'Operator not selected, nice  try ;)';
-    }
-}
+            default:
+                throw 'Operator not selected, nice  try ;)';
+        }
+    },
+    reset = () => {
+        NUM2 = undefined;
+        OPERATOR = undefined;
+    };
 
+// UPDATE FUNCTIONS
+const updateNumbers = (value) => !!OPERATOR ? NUM2 = parseFloat(value) : NUM1 = parseFloat(value),
+    updateHistory = result => {
+        return HISTORY.unshift({
+            num1: NUM1,
+            num2: NUM2,
+            operator: OPERATOR,
+            result
+        })
+    };
 
-const clickHandler = event => {
-    const action = event.target.attributes['data-action'].textContent;
-    const buttonValue = event.target.textContent;
+// HANDLER FUNCTIONS
+const switchHandler = (action, value) => {
     const screen = document.querySelector('.calculator-screen');
     let screenValue = getTextContent(screen);
 
     switch (action) {
         case 'clear':
+            reset();
             setTextContent(screen, 0);
-            NUM1 = undefined;
-            NUM2 = undefined;
-            OPERATOR = undefined;
             break;
 
         case 'operator':
@@ -46,7 +57,7 @@ const clickHandler = event => {
                 setTextContent(screen, 0);
             }
 
-            OPERATOR = buttonValue;
+            OPERATOR = value;
             break;
 
         case 'toggle-sign':
@@ -66,28 +77,80 @@ const clickHandler = event => {
             break;
 
         case 'total':
-            setTextContent(screen, calculate());
+            const result = calculate();
+
+            setTextContent(screen, result);
+            updateHistory(result);
+            reset(screen);
+            updateNumbers(result);
             break;
 
-        default:
-            screenValue = screenValue != 0 ? appendChar(screenValue, buttonValue) : buttonValue;
+        case 'h':
+            var history = document.querySelector('.history');
+
+            history.innerHTML = "";
+
+            HISTORY.forEach(item => {
+                let operation = Object.assign(document.createElement('p'),{
+                    textContent: `${item.num1} ${item.operator} ${item.num2} = ${item.result}`
+                });
+                history.appendChild(operation);
+            });
+
+            break;
+
+        case 'dark-mode-toggle':
+            const darkMode = 'dark';
+
+            let calculatorClassList = document.querySelector('body').classList;
+
+            calculatorClassList.contains(darkMode) ?
+                calculatorClassList.remove(darkMode) : calculatorClassList.add(darkMode);
+            break;
+
+        case 'num':
+            screenValue = screenValue != 0 ? appendChar(screenValue, value) : value;
 
             setTextContent(screen, screenValue);
             updateNumbers(screenValue);
             break;
     }
-}
+},
+    clickHandler = event => {
+        const action = event.target.attributes['data-action'].textContent;
+        const buttonValue = event.target.textContent;
 
-document.querySelector('.calculator-toggle-mode input').addEventListener('click', event => {
-    let calculatorClassList = document.querySelector('body').classList;
-    const darkMode = 'dark';
+        switchHandler(action, buttonValue);
+    },
+    keydownHandler = event => {
+        const VALUE_TO_ACTION = {
+            '1': 'num',
+            '2': 'num',
+            '3': 'num',
+            '4': 'num',
+            '5': 'num',
+            '6': 'num',
+            '7': 'num',
+            '8': 'num',
+            '9': 'num',
+            '0': 'num',
+            '+': 'operator',
+            '-': 'operator',
+            'x': 'operator',
+            '/': 'operator',
+            '%': 'operator',
+            'c': 'clear',
+            '.': 'decimal',
+            'Enter': 'total'
+        };
+        const keyValue = event.key;
+        const action = VALUE_TO_ACTION[keyValue];
 
-    if (calculatorClassList.contains(darkMode)) {
-        calculatorClassList.remove(darkMode);
-    } else {
-        calculatorClassList.add(darkMode);
-    }
-});
+        switchHandler(action, keyValue);
+    };
 
-document.querySelectorAll('button[data-action]')
+
+// INIT FUNCTIONS
+document.addEventListener('keydown', keydownHandler);
+document.querySelectorAll('[data-action]')
     .forEach(button => { button.addEventListener('click', clickHandler); });
