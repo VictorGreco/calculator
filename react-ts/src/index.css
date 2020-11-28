@@ -1,0 +1,21 @@
+/* LIGHT THEME */
+body {
+  --white: #FFFFFF;
+  --black: #000000;
+  --text-color: var(--black);
+  --body-bg: var(--white);
+  --third-color: lightgray;
+  --main-color: #7FFFD4;
+  --secondary-color: #D47FFF;
+}
+
+/* DARK THEME */
+body.dark {
+  --white: #FFFFFF;
+  --black: #000000;
+  --text-color: var(--white);
+  --body-bg: var(--black);
+  --third-color: darkgray;
+  --main-color: gray;
+  --secondary-color: #FF7F00;
+}

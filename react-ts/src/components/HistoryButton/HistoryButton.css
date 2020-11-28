@@ -1,0 +1,8 @@
+.nav-bar button {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: 0px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 2rem;
+}
