@@ -1,0 +1,32 @@
+button {
+    font-size: 2rem;
+    color: var(--text-color);
+    border: 0px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.calculator-body button {
+    border-radius: 36px;
+    width: 75px;
+    height: 75px;
+    margin: 5px 10px 5px 10px;
+}
+
+button.zero {
+    width: 170px;
+    text-align: start;
+    padding: 0 0 0 25px;
+}
+
+.calculator-body button {
+    background-color: var(--secondary-color);
+}
+
+.calculator-body button.gray {
+    background-color: var(--third-color);
+}
+
+button.num {
+    background-color: var(--main-color);
+}
